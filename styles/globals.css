@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-charcoal: #1f1f1f;
+  --color-cream: #f7f3eb;
+  --color-gold: #d7b56d;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: #ffffff;
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility for our heavy rounded look */
+.rounded-32 {
+  border-radius: 32px;
+}
