@@ -157,7 +157,7 @@ export default function LandingPage() {
         <span className="text-sm font-bold tracking-wider text-white/70 uppercase mb-2 block">Why Us</span>
         <h2 className="text-3xl md:text-4xl font-zentry uppercase tracking-wide font-bold mb-6">What sets us apart</h2>
         <p className="max-w-2xl mx-auto text-white/80 mb-10">
-          We don't just change how you look; we transform how you live. Our integrated approach ensures consistency across all facets of your life.
+          We don&apos;t just change how you look; we transform how you live. Our integrated approach ensures consistency across all facets of your life.
         </p>
         <div className="flex justify-center space-x-4">
           <button className="border border-white/30 text-white/90 px-6 py-2 rounded-md hover:bg-white/5 transition">
