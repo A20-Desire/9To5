@@ -346,7 +346,7 @@ export default function InteriorDesignPage() {
             Ready to Transform Your Space?
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-            Let's discuss your project and create something extraordinary together. 
+            Let&apos;s discuss your project and create something extraordinary together. 
             Our team is ready to bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
