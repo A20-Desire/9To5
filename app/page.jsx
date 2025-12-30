@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import GradientBackground from '../components/GradientBackground';
 import ZentryHero from '../components/ZentryHero';
-import ThreePillarsSection from '../components/ThreePillarsSection';
+// import HeroSection from '../HeroSection';
 
 // Icons
 const IconHanger = () => (
@@ -86,8 +86,71 @@ export default function LandingPage() {
       {/* Hero Section */}
       <ZentryHero />
 
-      {/* Three Pillars Section - Animated Zentry Style */}
-      <ThreePillarsSection />
+      {/* Three Pillars Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-zentry uppercase tracking-wide font-bold mb-4">Three pillars of complete<br />transformation</h2>
+          <p className="text-white/80 max-w-2xl mx-auto">
+            Our comprehensive approach ensures every aspect of your lifestyle is aligned with your personal brand.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Pillar 1 - Image Consultancy (Linked) */}
+          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition cursor-pointer group">
+            <Link href="/image-consultancy">
+              <div className="flex justify-center">
+                <IconHanger />
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-brand-dark-green transition">Image consultancy</h3>
+              <p className="text-white/80 mb-4">
+                Refine your wardrobe and personal style to reflect your true potential and professional goals.
+              </p>
+              <span className="text-brand-dark-green font-medium inline-flex items-center">
+                Learn more 
+                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+
+          {/* Pillar 2 - Interior Design (Linked) */}
+          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition cursor-pointer group">
+            <Link href="/interior-design">
+              <div className="flex justify-center">
+                <IconCompass />
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-brand-dark-green transition">Interior decoration</h3>
+              <p className="text-white/80 mb-4">
+                Create spaces that inspire and comfort, perfectly tailored to your aesthetic and functional needs.
+              </p>
+              <span className="text-brand-dark-green font-medium inline-flex items-center">
+                Learn more 
+                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+
+          {/* Pillar 3 */}
+          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition">
+            <div className="flex justify-center">
+              <IconClipboard />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Event planning</h3>
+            <p className="text-white/80 mb-4">
+              Execute flawless events that leave lasting impressions, from intimate gatherings to grand celebrations.
+            </p>
+            <Link href="#" className="text-white font-medium inline-flex items-center hover:text-brand-dark-green">
+              Learn more 
+              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* What Sets Us Apart */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -125,9 +188,16 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="bg-white/10 h-[400px] rounded-lg flex items-center justify-center">
-             <svg className="w-20 h-20 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+             {/* Interior Design Feature Image */}
+             <div className="relative w-full h-full">
+               <Image
+                 src="/assets/main-image/interior-showcase.png"
+                 alt="Interior Design Showcase"
+                 fill
+                 className="object-cover rounded-lg"
+                 priority
+               />
+             </div>
           </div>
         </div>
       </section>
@@ -154,9 +224,16 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="order-1 md:order-2 bg-white/20 h-[400px] rounded-lg flex items-center justify-center">
-               <svg className="w-20 h-20 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+               {/* Integrity and Attention Office Image */}
+               <div className="relative w-full h-full">
+                 <Image
+                   src="/assets/main-image/9to5-office.png"
+                   alt="9To5 Consultancy Office"
+                   fill
+                   className="object-cover rounded-lg"
+                   priority
+                 />
+               </div>
             </div>
           </div>
         </div>
@@ -250,10 +327,17 @@ export default function LandingPage() {
             Contact Us
           </button>
         </div>
-        <div className="w-full h-[400px] bg-white/20 rounded-lg flex items-center justify-center">
-           <svg className="w-24 h-24 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
+        <div className="w-full h-[400px] bg-white/20 flex items-center justify-center overflow-hidden">
+           {/* 9To5 Consultancy Room Logo Image */}
+           <div className="relative w-full h-full">
+             <Image
+               src="/assets/main-image/9to5-room.png"
+               alt="9To5 Consultancy Room Logo"
+               fill
+               className="object-cover"
+               priority
+             />
+           </div>
         </div>
       </section>
 
@@ -319,9 +403,16 @@ export default function LandingPage() {
           </button>
         </div>
         <div className="w-full h-[300px] bg-white/20 rounded-lg flex items-center justify-center">
-           <svg className="w-20 h-20 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
+           {/* Event Decor Feature Image */}
+           <div className="relative w-full h-full">
+             <Image
+               src="/assets/main-image/event-decor.png"
+               alt="Event Decor Showcase"
+               fill
+               className="object-cover rounded-lg"
+               priority
+             />
+           </div>
         </div>
       </section>
 

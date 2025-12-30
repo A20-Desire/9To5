@@ -21,7 +21,7 @@ const ZentryHero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-dark-green/20 via-black to-black" />
         <div className="absolute inset-0 opacity-20" 
-             style={{ backgroundImage: 'url("/assets/grid-pattern.svg")', backgroundSize: '50px 50px' }} />
+             style={{ backgroundImage: 'url("assets/grid-pattern.svg")', backgroundSize: '50px 50px' }} />
       </div>
 
       {/* Main Content */}
@@ -61,7 +61,7 @@ const ZentryHero = () => {
           <div className="absolute inset-0 bg-gray-900">
              {/* Using one of the existing images as a hero background for now */}
              <Image 
-                src="/assets/fashion men/download (6).jpg" 
+                src="/assets/main-image/Hero.png" 
                 alt="Hero Visual" 
                 fill 
                 className="object-cover opacity-60 hover:scale-105 transition-transform duration-700"
