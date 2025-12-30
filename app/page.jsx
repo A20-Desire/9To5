@@ -374,13 +374,13 @@ export default function LandingPage() {
             />
             <FAQItem 
               question="How do I get started?" 
-              answer="Simply click the 'Get Started' button to schedule your initial discovery call." 
+              answer="Simply click the &apos;Get Started&apos; button to schedule your initial discovery call." 
             />
           </div>
 
           <div className="text-center mt-12">
             <h3 className="font-bold text-lg mb-2">Still have questions?</h3>
-            <p className="text-white/80 mb-6">We're here to help.</p>
+            <p className="text-white/80 mb-6">We&apos;re here to help.</p>
             <button className="border border-white/30 text-white/90 px-6 py-2 rounded-md hover:bg-white hover:text-gray-900 transition">
               Contact Support
             </button>
