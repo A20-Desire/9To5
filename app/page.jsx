@@ -306,7 +306,7 @@ export default function LandingPage() {
            </span>
         </div>
         <blockquote className="text-2xl md:text-3xl font-sans italic font-light leading-relaxed mb-10">
-          "Working with 9TO5 has been a game changer. They transformed not just my wardrobe, but my entire outlook on personal branding."
+          &quot;Working with 9TO5 has been a game changer. They transformed not just my wardrobe, but my entire outlook on personal branding.&quot;
         </blockquote>
         <div className="flex flex-col items-center">
           <div className="w-12 h-12 bg-white/30 rounded-full mb-3"></div>

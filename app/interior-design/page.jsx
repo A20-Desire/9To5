@@ -88,7 +88,7 @@ export default function InteriorDesignPage() {
                 Creating Spaces That Reflect Your Soul
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                For over a decade, we've been transforming ordinary spaces into extraordinary experiences. 
+                For over a decade, we&apos;ve been transforming ordinary spaces into extraordinary experiences. 
                 Our team of award-winning designers combines artistic vision with practical functionality 
                 to deliver interiors that exceed expectations.
               </p>
