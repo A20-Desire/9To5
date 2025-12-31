@@ -70,7 +70,7 @@ const ZentryHero = () => {
              {/* Overlay Text */}
              <div className="absolute bottom-8 left-8 text-left">
                 <h3 className="text-2xl font-bold uppercase tracking-wider">The New Standard</h3>
-                <p className="text-sm text-gray-300 font-mono mt-2">/// SYSTEM.INIT_FASHION_MODULE</p>
+                <p className="text-sm text-gray-300 font-mono mt-2"> // SYSTEM.INIT_FASHION_MODULE</p>
                             {/* End Overlay Text */}
              </div>
           </div>
