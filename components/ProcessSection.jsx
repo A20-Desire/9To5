@@ -67,12 +67,12 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="relative bg-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative bg-black py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Background subtle pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg width="100%" height="100%">
           <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="0.5"/>
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(19, 255, 160, 0.35)" strokeWidth="0.5"/>
           </pattern>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
@@ -87,13 +87,13 @@ const ProcessSection = () => {
       >
         {/* Section Header */}
         <motion.div className="mb-20" variants={fadeInUp}>
-          <span className="inline-block px-4 py-2 text-xs font-zentry font-semibold uppercase tracking-[0.2em] text-gray-500 border border-gray-200 rounded-full mb-6">
+          <span className="inline-block px-4 py-2 text-xs font-zentry font-semibold uppercase tracking-[0.2em] text-white/60 border border-white/10 rounded-full mb-6">
             How we work
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-zentry uppercase font-bold text-black leading-tight max-w-2xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-zentry uppercase font-bold text-white leading-tight max-w-2xl">
             Let us show you how we drive your brand to new heights
           </h2>
-          <p className="mt-6 text-gray-600 max-w-xl">
+          <p className="mt-6 text-white/70 max-w-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu.
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ const ProcessSection = () => {
                  Q 400 900, 600 850 
                  Q 800 800, 600 1000 
                  Q 400 1200, 400 1200"
-              stroke="#e5e7eb"
+              stroke="rgba(19, 255, 160, 0.2)"
               strokeWidth="2"
               strokeDasharray="8 8"
               fill="none"
@@ -148,24 +148,24 @@ const ProcessSection = () => {
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3, ease: luxeEase }}
                 >
-                  <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 relative overflow-hidden group">
+                  <div className="bg-white/5 rounded-3xl p-8 md:p-10 shadow-xl border border-white/10 relative overflow-hidden group">
                     {/* Decorative corner */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-gray-50 to-transparent rounded-bl-full" />
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-full" />
                     
                     {/* Step Number */}
                     <div className="flex items-start gap-4 mb-6">
-                      <span className="text-6xl md:text-7xl font-zentry font-black text-gray-100 leading-none select-none">
+                      <span className="text-6xl md:text-7xl font-zentry font-black text-white/10 leading-none select-none">
                         {step.number}
                       </span>
                     </div>
 
                     {/* Title with decorative star */}
                     <div className="flex items-center gap-3 mb-4">
-                      <h3 className="text-2xl md:text-3xl font-zentry uppercase font-bold text-black">
+                      <h3 className="text-2xl md:text-3xl font-zentry uppercase font-bold text-white">
                         {step.title}
                       </h3>
                       <svg 
-                        className="w-6 h-6 text-black opacity-60"
+                        className="w-6 h-6 text-brand-green opacity-70"
                         viewBox="0 0 24 24" 
                         fill="currentColor"
                       >
@@ -174,12 +174,12 @@ const ProcessSection = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-white/70 leading-relaxed">
                       {step.description}
                     </p>
 
                     {/* Hover effect line */}
-                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-black group-hover:w-full transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-green group-hover:w-full transition-all duration-500" />
                   </div>
                 </motion.div>
 
@@ -199,13 +199,13 @@ const ProcessSection = () => {
           >
             <div className="relative">
               {/* Decorative arrow pointing to text */}
-              <svg
-                className="absolute -top-16 -left-12 w-16 h-16 text-gray-300 hidden md:block"
-                viewBox="0 0 100 100"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
+                <svg
+                  className="absolute -top-16 -left-12 w-16 h-16 text-white/30 hidden md:block"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                 <path
                   d="M 80 20 Q 40 30, 50 70"
                   strokeDasharray="4 4"
@@ -214,7 +214,7 @@ const ProcessSection = () => {
               </svg>
               
               <p 
-                className="text-2xl md:text-3xl lg:text-4xl text-gray-800 font-sans italic font-light"
+                className="text-2xl md:text-3xl lg:text-4xl text-white/80 font-sans italic font-light"
               >
                 Ready to be delivered!
               </p>

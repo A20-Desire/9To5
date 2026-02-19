@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import GradientBackground from '../components/GradientBackground';
+import ThemeShell from '../components/ThemeShell';
 import ZentryHero from '../components/ZentryHero';
 // import HeroSection from '../HeroSection';
 
@@ -58,9 +58,7 @@ const FAQItem = ({ question, answer }) => {
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen text-white">
-      <GradientBackground />
-      <div className="relative z-10">
+    <ThemeShell>
       {/* Navbar */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo: If you have the image file, save it as public/logo.png and uncomment the Image component below */}
@@ -96,7 +94,18 @@ export default function LandingPage() {
         </div>
         <div className="grid md:grid-cols-3 gap-12">
           {/* Pillar 1 - Image Consultancy (Linked) */}
-          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition cursor-pointer group">
+          <div className="text-center p-6 rounded-xl transition cursor-pointer group relative overflow-hidden border border-white/10 bg-white/5">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-70 group-hover:opacity-90 transition duration-500"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 20% 20%, rgba(19, 255, 160, 0.35), transparent 45%), radial-gradient(circle at 80% 30%, rgba(7, 191, 122, 0.3), transparent 50%), linear-gradient(135deg, rgba(0,0,0,0.7), rgba(7, 191, 122, 0.08)), url('/assets/pillars-pattern.svg')",
+                backgroundSize: "auto, auto, auto, 160px 160px",
+                backgroundBlendMode: "screen, screen, normal, multiply"
+              }}
+            />
+            <div className="relative z-10">
             <Link href="/image-consultancy">
               <div className="flex justify-center">
                 <IconHanger />
@@ -106,16 +115,28 @@ export default function LandingPage() {
                 Refine your wardrobe and personal style to reflect your true potential and professional goals.
               </p>
               <span className="text-brand-dark-green font-medium inline-flex items-center">
-                Learn more 
+                Discover 
                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </Link>
+            </div>
           </div>
 
           {/* Pillar 2 - Interior Design (Linked) */}
-          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition cursor-pointer group">
+          <div className="text-center p-6 rounded-xl transition cursor-pointer group relative overflow-hidden border border-white/10 bg-white/5">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-70 group-hover:opacity-90 transition duration-500"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 30% 80%, rgba(19, 255, 160, 0.3), transparent 50%), radial-gradient(circle at 70% 25%, rgba(7, 191, 122, 0.25), transparent 45%), linear-gradient(135deg, rgba(0,0,0,0.7), rgba(7, 191, 122, 0.08)), url('/assets/pillars-pattern.svg')",
+                backgroundSize: "auto, auto, auto, 160px 160px",
+                backgroundBlendMode: "screen, screen, normal, multiply"
+              }}
+            />
+            <div className="relative z-10">
             <Link href="/interior-design">
               <div className="flex justify-center">
                 <IconCompass />
@@ -125,16 +146,28 @@ export default function LandingPage() {
                 Create spaces that inspire and comfort, perfectly tailored to your aesthetic and functional needs.
               </p>
               <span className="text-brand-dark-green font-medium inline-flex items-center">
-                Learn more 
+                Discover 
                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </Link>
+            </div>
           </div>
 
           {/* Pillar 3 */}
-          <div className="text-center p-6 hover:bg-white/5 rounded-xl transition">
+          <div className="text-center p-6 rounded-xl transition group relative overflow-hidden border border-white/10 bg-white/5">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-70 group-hover:opacity-90 transition duration-500"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 80% 70%, rgba(19, 255, 160, 0.35), transparent 45%), radial-gradient(circle at 25% 25%, rgba(7, 191, 122, 0.25), transparent 50%), linear-gradient(135deg, rgba(0,0,0,0.7), rgba(7, 191, 122, 0.08)), url('/assets/pillars-pattern.svg')",
+                backgroundSize: "auto, auto, auto, 160px 160px",
+                backgroundBlendMode: "screen, screen, normal, multiply"
+              }}
+            />
+            <div className="relative z-10">
             <div className="flex justify-center">
               <IconClipboard />
             </div>
@@ -143,11 +176,12 @@ export default function LandingPage() {
               Execute flawless events that leave lasting impressions, from intimate gatherings to grand celebrations.
             </p>
             <Link href="#" className="text-white font-medium inline-flex items-center hover:text-brand-dark-green">
-              Learn more 
+              Discover 
               <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -467,7 +501,6 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-      </div>
-    </div>
+    </ThemeShell>
   );
 }

@@ -104,7 +104,7 @@ const gridContainerVariants = {
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-gradient-to-b from-white via-[#F0F4F8] to-white text-[#1c1c1c] min-h-screen flex flex-col overflow-hidden">
+    <div className="relative bg-black text-white min-h-screen flex flex-col overflow-hidden">
       
       {/* Futuristic Tunnel Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -112,7 +112,7 @@ const HeroSection = () => {
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at 50% 100%, rgba(240, 244, 248, 0.8) 0%, rgba(255, 255, 255, 0) 70%)',
+            background: 'radial-gradient(ellipse at 50% 100%, rgba(19, 255, 160, 0.18) 0%, rgba(0, 0, 0, 0) 70%)',
           }}
         />
         
@@ -132,21 +132,21 @@ const HeroSection = () => {
                 {/* Left trapezoid rib */}
                 <path
                   d={`M 0 ${800 - offset} L ${200 + i * 30} ${600 - offset} L ${250 + i * 35} ${550 - offset} L 0 ${700 - offset} Z`}
-                  stroke="#E2E8F0"
+                  stroke="rgba(19, 255, 160, 0.25)"
                   strokeWidth="1.5"
                   fill="none"
                 />
                 {/* Right trapezoid rib */}
                 <path
                   d={`M 1200 ${800 - offset} L ${1000 - i * 30} ${600 - offset} L ${950 - i * 35} ${550 - offset} L 1200 ${700 - offset} Z`}
-                  stroke="#E2E8F0"
+                  stroke="rgba(19, 255, 160, 0.25)"
                   strokeWidth="1.5"
                   fill="none"
                 />
                 {/* Top connecting beam */}
                 <path
                   d={`M ${250 + i * 35} ${550 - offset} Q 600 ${480 - offset}, ${950 - i * 35} ${550 - offset}`}
-                  stroke="#E2E8F0"
+                  stroke="rgba(19, 255, 160, 0.2)"
                   strokeWidth="1"
                   fill="none"
                 />
@@ -186,13 +186,13 @@ const HeroSection = () => {
           {/* Gradients */}
           <defs>
             <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="white" stopOpacity="1" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
+              <stop offset="0%" stopColor="#13ffa0" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#13ffa0" stopOpacity="0" />
             </radialGradient>
             <linearGradient id="lightGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stopColor="#E2E8F0" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#F0F4F8" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
+              <stop offset="0%" stopColor="#13ffa0" stopOpacity="0.6" />
+              <stop offset="50%" stopColor="#07bf7a" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#13ffa0" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -201,7 +201,7 @@ const HeroSection = () => {
         <div 
           className="absolute bottom-0 left-0 right-0 h-1/3"
           style={{
-            background: 'linear-gradient(to top, rgba(240, 244, 248, 0.6) 0%, transparent 100%)',
+            background: 'linear-gradient(to top, rgba(19, 255, 160, 0.12) 0%, transparent 100%)',
           }}
         />
 
@@ -210,7 +210,7 @@ const HeroSection = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-blue-100 rounded-full"
+              className="absolute w-1 h-1 bg-brand-green rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -234,8 +234,8 @@ const HeroSection = () => {
           className="absolute bottom-0 left-0 right-0 h-1/2 opacity-10"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(226, 232, 240, 0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(226, 232, 240, 0.5) 1px, transparent 1px)
+              linear-gradient(rgba(19, 255, 160, 0.25) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(19, 255, 160, 0.25) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
             transform: 'perspective(500px) rotateX(60deg)',
@@ -265,7 +265,7 @@ const HeroSection = () => {
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-2 h-2 bg-black rounded-full" />
+            <div className="w-2 h-2 bg-brand-green rounded-full" />
           </div>
         </div>
       </motion.div>
@@ -283,7 +283,7 @@ const HeroSection = () => {
         >
           <div className="relative max-w-4xl mx-auto">
             <motion.h1
-              className="text-5xl font-zentry uppercase font-black leading-tight tracking-tight text-black sm:text-6xl lg:text-7xl"
+              className="text-5xl font-zentry uppercase font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
               variants={fadeInUp}
             >
               Elevate Your Style With Bold Fashion
@@ -476,23 +476,23 @@ const HeroSection = () => {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
             {/* Bottom Left: Testimonial */}
             <motion.div variants={fadeInUp} className="max-w-md">
-              <span className="text-6xl text-gray-300 font-zentry">“</span>
-              <p className="text-gray-600 font-medium text-lg -mt-4 relative z-10">
+              <span className="text-6xl text-white/40 font-zentry">“</span>
+              <p className="text-white/70 font-medium text-lg -mt-4 relative z-10">
                 TrendZone's styles are fresh, bold, and exactly what I needed to upgrade my wardrobe. Loved the quality and vibe!
               </p>
-              <p className="mt-4 font-zentry uppercase text-xl text-yellow-600">Rafi H.</p>
+              <p className="mt-4 font-zentry uppercase text-xl text-brand-green">Rafi H.</p>
             </motion.div>
 
             {/* Bottom Right: Lifestyle */}
             <motion.div variants={fadeInUp} className="flex flex-col items-start md:items-end text-right">
               <div className="flex items-baseline gap-4">
-                <span className="text-6xl font-light text-black">01</span>
-                <span className="text-xl font-medium text-gray-500">Lifestyle</span>
+                <span className="text-6xl font-light text-white">01</span>
+                <span className="text-xl font-medium text-white/60">Lifestyle</span>
               </div>
-              <h3 className="text-2xl font-bold text-black mt-2 max-w-xs text-left md:text-right">
+              <h3 className="text-2xl font-bold text-white mt-2 max-w-xs text-left md:text-right">
                 Set Up Your Fashion With The Latest Trends
               </h3>
-              <span className="mt-4 text-2xl">→</span>
+              <span className="mt-4 text-2xl text-brand-green">→</span>
             </motion.div>
           </div>
         </div>

@@ -79,7 +79,7 @@ const chamferedClipPath = "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100
 
 const NewCollectionSection = () => {
   return (
-    <section className="relative bg-gradient-to-b from-green-700 via-green-800 to-green-900 py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-brand-dark-green via-black to-black py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Background noise texture overlay */}
       <div className="absolute inset-0 opacity-20">
         <div 
@@ -151,7 +151,7 @@ const NewCollectionSection = () => {
             variants={cardVariants}
           >
             <div 
-              className="relative h-[500px] lg:h-[600px] overflow-hidden bg-gradient-to-br from-green-600 to-green-800"
+              className="relative h-[500px] lg:h-[600px] overflow-hidden bg-gradient-to-br from-brand-dark-green to-black"
               style={{ clipPath: chamferedClipPath }}
             >
               {/* Background Image */}
@@ -233,7 +233,7 @@ const NewCollectionSection = () => {
                 whileHover={{ y: -10 }}
               >
                 <div 
-                  className="relative h-[400px] lg:h-[600px] overflow-hidden bg-gradient-to-br from-green-500 to-green-700"
+                  className="relative h-[400px] lg:h-[600px] overflow-hidden bg-gradient-to-br from-brand-dark-green to-black"
                   style={{ clipPath: chamferedClipPath }}
                 >
                   {/* Product Image */}
@@ -248,7 +248,7 @@ const NewCollectionSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-green-400/0 group-hover:bg-green-400/10 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-brand-green/0 group-hover:bg-brand-green/10 transition-colors duration-300" />
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
