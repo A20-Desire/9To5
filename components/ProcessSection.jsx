@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import LightboxImage from './LightboxImage';
 
 const luxeEase = [0.25, 0.46, 0.45, 0.94];
 
@@ -42,30 +43,39 @@ const cardVariants = {
   },
 };
 
-const steps = [
+const defaultSteps = [
   {
     number: "01",
-    title: "Define",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu sed consectetur odio consequat."
+    title: "Discover",
+    description: "We start with a personal style audit - lifestyle, goals, body lines, and the impression you want to lead with.",
+    image: "/assets/main-image/9To5-room.png",
+    alt: "Style consultation setting"
   },
   {
     number: "02",
-    title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu sed consectetur odio consequat."
+    title: "Curate",
+    description: "Colour direction, silhouettes, and visual identity come together in a tailored style blueprint.",
+    image: "/assets/main-image/9To5-office.png",
+    alt: "Wardrobe planning moodboard"
   },
   {
     number: "03",
-    title: "Build",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu sed consectetur odio consequat."
+    title: "Assemble",
+    description: "We shape a wardrobe plan with outfit formulas, accessory pairings, and intentional shopping guidance.",
+    image: "/assets/main-image/WhatsApp Image 2025-12-03 at 2.24.25 AM (1).jpeg",
+    alt: "Curated looks selection"
   },
   {
     number: "04",
-    title: "Launch",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu sed consectetur odio consequat."
+    title: "Elevate",
+    description: "Your lookbook, styling notes, and upkeep schedule keep everything polished long after the session.",
+    image: "/assets/main-image/WhatsApp Image 2025-12-03 at 2.24.25 AM (3).jpeg",
+    alt: "Final styling reveal"
   },
 ];
 
-const ProcessSection = () => {
+const ProcessSection = ({ steps: stepsOverride }) => {
+  const steps = stepsOverride ?? defaultSteps;
   return (
     <section className="relative bg-black py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Background subtle pattern */}
@@ -91,10 +101,10 @@ const ProcessSection = () => {
             How we work
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-zentry uppercase font-bold text-white leading-tight max-w-2xl">
-            Let us show you how we drive your brand to new heights
+            A Process Built For Presence
           </h2>
           <p className="mt-6 text-white/70 max-w-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie libero at nulla rhoncus, eu.
+            From personal style discovery to wardrobe execution, every step is crafted to make your image feel intentional and powerful.
           </p>
         </motion.div>
 
@@ -157,6 +167,18 @@ const ProcessSection = () => {
                       <span className="text-6xl md:text-7xl font-zentry font-black text-white/10 leading-none select-none">
                         {step.number}
                       </span>
+                    </div>
+
+                    {/* Image */}
+                    <div className="relative h-44 w-full rounded-2xl overflow-hidden border border-white/10 mb-6">
+                      <LightboxImage
+                        src={step.image}
+                        alt={step.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 45vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
                     </div>
 
                     {/* Title with decorative star */}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from 'next/image';
+import LightboxImage from './LightboxImage';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -60,7 +60,7 @@ const ZentryHero = () => {
           {/* Placeholder for a Hero Video or Main Image */}
           <div className="absolute inset-0 bg-gray-900">
              {/* Using one of the existing images as a hero background for now */}
-             <Image 
+             <LightboxImage 
                 src="/assets/main-image/Hero.png" 
                 alt="Hero Visual" 
                 fill 

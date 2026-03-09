@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import AppProviders from '../components/AppProviders';
 
 export const metadata = {
   title: '9TO5 Consultancy',
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="bg-black text-white antialiased">
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

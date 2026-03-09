@@ -5,6 +5,37 @@ import ProcessSection from '../../components/ProcessSection';
 import NewCollectionSection from '../../components/NewCollectionSection';
 
 export default function ImageConsultancyPage() {
+  const menSteps = [
+    {
+      number: "01",
+      title: "Discover",
+      description: "We start with a personal style audit - lifestyle, goals, body lines, and the impression you want to lead with.",
+      image: "/assets/fashion men/download (14).jpg",
+      alt: "Men's style discovery"
+    },
+    {
+      number: "02",
+      title: "Curate",
+      description: "Colour direction, silhouettes, and visual identity come together in a tailored style blueprint.",
+      image: "/assets/fashion men/download (13).jpg",
+      alt: "Curated menswear palette"
+    },
+    {
+      number: "03",
+      title: "Assemble",
+      description: "We shape a wardrobe plan with outfit formulas, accessory pairings, and intentional shopping guidance.",
+      image: "/assets/fashion men/download (12).jpg",
+      alt: "Menswear outfit formulas"
+    },
+    {
+      number: "04",
+      title: "Elevate",
+      description: "Your lookbook, styling notes, and upkeep schedule keep everything polished long after the session.",
+      image: "/assets/fashion men/download (11).jpg",
+      alt: "Elevated menswear finish"
+    },
+  ];
+
   return (
     <ThemeShell>
       <main>
@@ -28,7 +59,7 @@ export default function ImageConsultancyPage() {
         </div>
       </section>
       <HeroSection />
-      <ProcessSection />
+      <ProcessSection steps={menSteps} />
       <NewCollectionSection />
       </main>
     </ThemeShell>

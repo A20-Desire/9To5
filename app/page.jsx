@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import LightboxImage from '../components/LightboxImage';
 import ThemeShell from '../components/ThemeShell';
 import ZentryHero from '../components/ZentryHero';
+import { useContactModal } from '../components/ContactModalContext';
 // import HeroSection from '../HeroSection';
 
 // Icons
@@ -57,12 +58,14 @@ const FAQItem = ({ question, answer }) => {
 };
 
 export default function LandingPage() {
+  const { openContactModal } = useContactModal();
+
   return (
     <ThemeShell>
       {/* Navbar */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo: If you have the image file, save it as public/logo.png and uncomment the Image component below */}
-        {/* <Image src="/logo.png" alt="9To5 Logo" width={120} height={40} /> */}
+        {/* <LightboxImage src="/logo.png" alt="9To5 Logo" width={120} height={40} /> */}
         <div className="flex flex-col items-start leading-none select-none cursor-pointer">
           <div className="font-bold text-3xl tracking-tight flex items-center">
             <span className="text-white">9</span>
@@ -71,10 +74,10 @@ export default function LandingPage() {
           <span className="text-[0.65rem] tracking-[0.2em] text-brand-green font-bold uppercase">Consultancy</span>
         </div>
         <div className="hidden md:flex space-x-8">
-          <Link href="#" className="text-white/80 hover:text-white">About us</Link>
-          <Link href="#" className="text-white/80 hover:text-white">Services</Link>
-          <Link href="#" className="text-white/80 hover:text-white">Process</Link>
-          <Link href="#" className="text-white/80 hover:text-white">Contact</Link>
+          <Link href="#about" className="text-white/80 hover:text-white">About us</Link>
+          <Link href="#services" className="text-white/80 hover:text-white">Services</Link>
+          <Link href="#process" className="text-white/80 hover:text-white">Process</Link>
+          <button type="button" onClick={openContactModal} className="text-white/80 hover:text-white">Contact</button>
         </div>
         <button className="bg-brand-dark-green text-white px-6 py-2 rounded-full hover:opacity-90 transition">
           Join
@@ -85,7 +88,7 @@ export default function LandingPage() {
       <ZentryHero />
 
       {/* Three Pillars Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-zentry uppercase tracking-wide font-bold mb-4">Three pillars of complete<br />transformation</h2>
           <p className="text-white/80 max-w-2xl mx-auto">
@@ -187,7 +190,7 @@ export default function LandingPage() {
       </section>
 
       {/* What Sets Us Apart */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <span className="text-sm font-bold tracking-wider text-white/70 uppercase mb-2 block">Why Us</span>
         <h2 className="text-3xl md:text-4xl font-zentry uppercase tracking-wide font-bold mb-6">What sets us apart</h2>
         <p className="max-w-2xl mx-auto text-white/80 mb-10">
@@ -204,7 +207,7 @@ export default function LandingPage() {
       </section>
 
       {/* Feature Section A */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section id="process" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-sm font-bold tracking-wider text-white/70 uppercase mb-2 block">Design</span>
@@ -221,16 +224,27 @@ export default function LandingPage() {
               </button>
             </div>
           </div>
-          <div className="bg-white/10 h-[400px] rounded-lg flex items-center justify-center">
-             {/* Interior Design Feature Image */}
-             <div className="relative w-full h-full">
-               <Image
-                 src="/assets/main-image/interior-showcase.png"
-                 alt="Interior Design Showcase"
-                 fill
-                 className="object-cover rounded-lg"
-                 priority
-               />
+          <div className="bg-white/10 h-[400px] rounded-lg p-3">
+             {/* Interior Design Feature Images */}
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 h-full">
+               <div className="relative w-full h-full rounded-lg overflow-hidden">
+                 <LightboxImage
+                   src="/assets/main-image/Champagne Curve_ Editorial Penthouse Kitchen with Sculptural Marble Island.jpg"
+                   alt="Editorial penthouse kitchen"
+                   fill
+                   className="object-cover"
+                   priority
+                 />
+               </div>
+               <div className="relative w-full h-full rounded-lg overflow-hidden">
+                 <LightboxImage
+                   src="/assets/main-image/download (24).jpg"
+                   alt="Modern interior styling"
+                   fill
+                   className="object-cover"
+                   priority
+                 />
+               </div>
              </div>
           </div>
         </div>
@@ -260,7 +274,7 @@ export default function LandingPage() {
             <div className="order-1 md:order-2 bg-white/20 h-[400px] rounded-lg flex items-center justify-center">
                {/* Integrity and Attention Office Image */}
                <div className="relative w-full h-full">
-                 <Image
+                 <LightboxImage
                    src="/assets/main-image/9to5-office.png"
                    alt="9To5 Consultancy Office"
                    fill
@@ -350,26 +364,32 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h2 className="text-3xl md:text-4xl font-zentry uppercase tracking-wide font-bold mb-6">Ready to begin your<br />transformation?</h2>
         <p className="text-white/80 mb-10">Schedule your initial consultation today and take the first step.</p>
         <div className="flex justify-center space-x-4 mb-16">
           <button className="bg-brand-dark-green text-white px-8 py-3 rounded-md hover:opacity-90 transition">
             Get Started
           </button>
-          <button className="border border-white/30 text-white/90 px-8 py-3 rounded-md hover:bg-white/5 transition">
+          <button
+            type="button"
+            onClick={openContactModal}
+            className="border border-white/30 text-white/90 px-8 py-3 rounded-md hover:bg-white/5 transition"
+          >
             Contact Us
           </button>
         </div>
         <div className="w-full h-[400px] bg-white/20 flex items-center justify-center overflow-hidden">
-           {/* 9To5 Consultancy Room Logo Image */}
+           {/* 9To5 Consultancy Brand Video */}
            <div className="relative w-full h-full">
-             <Image
-               src="/assets/main-image/9to5-room.png"
-               alt="9To5 Consultancy Room Logo"
-               fill
-               className="object-cover"
-               priority
+             <video
+               className="w-full h-full object-cover object-center scale-[0.97] origin-center"
+               src="/assets/main-image/16c19001d42a0a126cf805f4345346a1.mp4"
+               autoPlay
+               muted
+               loop
+               playsInline
+               preload="metadata"
              />
            </div>
         </div>
@@ -415,7 +435,11 @@ export default function LandingPage() {
           <div className="text-center mt-12">
             <h3 className="font-bold text-lg mb-2">Still have questions?</h3>
             <p className="text-white/80 mb-6">We&apos;re here to help.</p>
-            <button className="border border-white/30 text-white/90 px-6 py-2 rounded-md hover:bg-white hover:text-gray-900 transition">
+            <button
+              type="button"
+              onClick={openContactModal}
+              className="border border-white/30 text-white/90 px-6 py-2 rounded-md hover:bg-white hover:text-gray-900 transition"
+            >
               Contact Support
             </button>
           </div>
@@ -439,7 +463,7 @@ export default function LandingPage() {
         <div className="w-full h-[300px] bg-white/20 rounded-lg flex items-center justify-center">
            {/* Event Decor Feature Image */}
            <div className="relative w-full h-full">
-             <Image
+             <LightboxImage
                src="/assets/main-image/event-decor.png"
                alt="Event Decor Showcase"
                fill
@@ -471,7 +495,7 @@ export default function LandingPage() {
               <li><Link href="#">About Us</Link></li>
               <li><Link href="#">Careers</Link></li>
               <li><Link href="#">Press</Link></li>
-              <li><Link href="#">Contact</Link></li>
+              <li><button type="button" onClick={openContactModal} className="hover:text-white transition">Contact</button></li>
             </ul>
           </div>
           <div>
@@ -504,3 +528,4 @@ export default function LandingPage() {
     </ThemeShell>
   );
 }
+

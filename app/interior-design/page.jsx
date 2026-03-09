@@ -2,11 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import LightboxImage from '../../components/LightboxImage';
 import ThemeShell from '../../components/ThemeShell';
+import { useContactModal } from '../../components/ContactModalContext';
 
 export default function InteriorDesignPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { openContactModal } = useContactModal();
 
   return (
     <ThemeShell>
@@ -109,7 +111,11 @@ export default function InteriorDesignPage() {
 
             {/* CTA Button */}
             <div>
-              <button className="px-8 py-4 bg-gradient-to-r from-brand-dark-green to-brand-green text-white rounded-full hover:opacity-90 transition shadow-lg shadow-brand-dark-green/30 text-lg font-medium">
+              <button
+                type="button"
+                onClick={openContactModal}
+                className="px-8 py-4 bg-gradient-to-r from-brand-dark-green to-brand-green text-white rounded-full hover:opacity-90 transition shadow-lg shadow-brand-dark-green/30 text-lg font-medium"
+              >
                 Contact Us
               </button>
             </div>
@@ -131,7 +137,7 @@ export default function InteriorDesignPage() {
             <div className="grid grid-cols-2 gap-4">
               {/* Image 1 - Tall */}
               <div className="row-span-2 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-96 overflow-hidden relative">
-                <Image
+                <LightboxImage
                   src="/assets/interior-design/about-tall.jpg"
                   alt="Interior detail"
                   fill
@@ -141,7 +147,7 @@ export default function InteriorDesignPage() {
 
               {/* Image 2 */}
               <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-44 overflow-hidden relative">
-                <Image
+                <LightboxImage
                   src="/assets/interior-design/about-small-1.jpg"
                   alt="Interior vignette"
                   fill
@@ -151,7 +157,7 @@ export default function InteriorDesignPage() {
 
               {/* Image 3 */}
               <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-44 overflow-hidden relative">
-                <Image
+                <LightboxImage
                   src="/assets/interior-design/about-small-2.jpg"
                   alt="Interior styling"
                   fill
@@ -161,7 +167,7 @@ export default function InteriorDesignPage() {
 
               {/* Image 4 - Wide */}
               <div className="col-span-2 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-48 overflow-hidden relative">
-                <Image
+                <LightboxImage
                   src="/assets/interior-design/about-wide.jpg"
                   alt="Interior concept"
                   fill
@@ -185,7 +191,7 @@ export default function InteriorDesignPage() {
 
             {/* Main Image */}
             <div className="relative bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl h-[500px] overflow-hidden">
-              <Image
+              <LightboxImage
                 src="/assets/interior-design/how-it-works.jpg"
                 alt="Interior layout"
                 fill
@@ -252,7 +258,11 @@ export default function InteriorDesignPage() {
 
             {/* CTA Button */}
             <div>
-              <button className="px-8 py-4 bg-gradient-to-r from-brand-dark-green to-brand-green text-white rounded-full hover:opacity-90 transition shadow-lg shadow-brand-dark-green/30 text-lg font-medium">
+              <button
+                type="button"
+                onClick={openContactModal}
+                className="px-8 py-4 bg-gradient-to-r from-brand-dark-green to-brand-green text-white rounded-full hover:opacity-90 transition shadow-lg shadow-brand-dark-green/30 text-lg font-medium"
+              >
                 Contact Us
               </button>
             </div>
@@ -299,7 +309,7 @@ export default function InteriorDesignPage() {
 
             {/* Main Showcase Image */}
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl h-[600px] overflow-hidden relative">
-              <Image
+              <LightboxImage
                 src="/assets/interior-design/projects.jpg"
                 alt="Recent masterpiece"
                 fill
@@ -378,7 +388,7 @@ export default function InteriorDesignPage() {
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><Link href="#projects" className="hover:text-white transition">Projects</Link></li>
                 <li><Link href="#studio" className="hover:text-white transition">Studio</Link></li>
-                <li><Link href="#contact" className="hover:text-white transition">Contact</Link></li>
+                <li><button type="button" onClick={openContactModal} className="hover:text-white transition">Contact</button></li>
               </ul>
             </div>
             <div>
@@ -423,3 +433,4 @@ export default function InteriorDesignPage() {
     </ThemeShell>
   );
 }
+

@@ -1,7 +1,7 @@
 "use client";
 
 
-import Image from 'next/image';
+import LightboxImage from './components/LightboxImage';
 import { motion } from 'framer-motion';
 
 // Premium easing curve for luxury feel
@@ -289,22 +289,6 @@ const HeroSection = () => {
               Elevate Your Style With Bold Fashion
             </motion.h1>
             
-            {/* Floating Avatar Stack - Top Right of Headline */}
-            <motion.div 
-              className="absolute -top-8 -right-4 lg:-right-24 hidden md:flex items-center"
-              variants={zoomCardVariants}
-            >
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative">
-                    <Image src={`/images/hero-image.jpg`} alt="User" fill className="object-cover" />
-                  </div>
-                ))}
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-black text-white flex items-center justify-center text-xs font-bold">
-                  +
-                </div>
-              </div>
-            </motion.div>
           </div>
         </motion.header>
 
@@ -321,12 +305,12 @@ const HeroSection = () => {
               >
                 {/* Noise Texture */}
                 <div 
-                  className="absolute inset-0 opacity-20 z-20"
+                  className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-                <Image 
+                <LightboxImage 
                   src="/assets/fashion men/Burgundy crystal coated Agbada for Men_3piece men's wedding Outfit_African men Clothing_Dashiki_ All Ceremonial dress for Groommen,Prom suit.jpg" 
                   alt="Burgundy Agbada Fashion" 
                   fill 
@@ -340,12 +324,12 @@ const HeroSection = () => {
               >
                 {/* Noise Texture */}
                 <div 
-                  className="absolute inset-0 opacity-20 z-20"
+                  className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-                <Image 
+                <LightboxImage 
                   src="/assets/fashion men/Screenshot 2025-12-04 154339.png" 
                   alt="Fashion Style" 
                   fill 
@@ -361,12 +345,12 @@ const HeroSection = () => {
             >
               {/* Noise Texture */}
               <div 
-                className="absolute inset-0 opacity-20 z-20"
+                className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                 }}
               />
-              <Image 
+              <LightboxImage 
                 src="/assets/fashion men/download (6).jpg" 
                 alt="Men Fashion" 
                 fill 
@@ -383,12 +367,12 @@ const HeroSection = () => {
               >
                 {/* Noise Texture */}
                 <div 
-                  className="absolute inset-0 opacity-20 z-20"
+                  className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-                <Image 
+                <LightboxImage 
                   src="/assets/fashion men/Screenshot 2025-12-04 192518.png" 
                   alt="Fashion Style" 
                   fill 
@@ -415,12 +399,12 @@ const HeroSection = () => {
             >
               {/* Noise Texture */}
               <div 
-                className="absolute inset-0 opacity-20 z-20"
+                className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                 }}
               />
-              <Image 
+              <LightboxImage 
                 src="/assets/fashion men/Screenshot 2025-12-04 192606.png" 
                 alt="Fashion Style" 
                 fill 
@@ -437,12 +421,12 @@ const HeroSection = () => {
               >
                 {/* Noise Texture */}
                 <div 
-                  className="absolute inset-0 opacity-20 z-20"
+                  className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-                <Image 
+                <LightboxImage 
                   src="/assets/fashion men/Screenshot 2025-12-04 192647.png" 
                   alt="Fashion Style" 
                   fill 
@@ -456,12 +440,12 @@ const HeroSection = () => {
               >
                 {/* Noise Texture */}
                 <div 
-                  className="absolute inset-0 opacity-20 z-20"
+                  className="absolute inset-0 opacity-20 z-20 pointer-events-none"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-                <Image 
+                <LightboxImage 
                   src="/assets/fashion men/Screenshot 2025-12-04 142518.png" 
                   alt="Fashion Style" 
                   fill 
@@ -472,27 +456,46 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Bottom Floating Elements */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
-            {/* Bottom Left: Testimonial */}
-            <motion.div variants={fadeInUp} className="max-w-md">
-              <span className="text-6xl text-white/40 font-zentry">“</span>
-              <p className="text-white/70 font-medium text-lg -mt-4 relative z-10">
-                TrendZone's styles are fresh, bold, and exactly what I needed to upgrade my wardrobe. Loved the quality and vibe!
-              </p>
-              <p className="mt-4 font-zentry uppercase text-xl text-brand-green">Rafi H.</p>
+          {/* Bottom Feature Cards */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div variants={fadeInUp}>
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 h-72">
+                <LightboxImage
+                  src="/assets/fashion men/download (16).jpg"
+                  alt="Modern menswear styling"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-sm uppercase tracking-[0.2em] text-white/60">Signature Styling</p>
+                  <h3 className="text-2xl font-bold text-white mt-2">Effortless Formal</h3>
+                  <p className="text-white/70 text-sm mt-2">
+                    Tailored silhouettes and refined textures built for confident daily wear.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Bottom Right: Lifestyle */}
-            <motion.div variants={fadeInUp} className="flex flex-col items-start md:items-end text-right">
-              <div className="flex items-baseline gap-4">
-                <span className="text-6xl font-light text-white">01</span>
-                <span className="text-xl font-medium text-white/60">Lifestyle</span>
+            <motion.div variants={fadeInUp}>
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 h-72">
+                <LightboxImage
+                  src="/assets/fashion men/download (15).jpg"
+                  alt="Editorial menswear mood"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-sm uppercase tracking-[0.2em] text-white/60">Occasion Ready</p>
+                  <h3 className="text-2xl font-bold text-white mt-2">Evening Presence</h3>
+                  <p className="text-white/70 text-sm mt-2">
+                    Statement pieces balanced with elevated basics for standout moments.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mt-2 max-w-xs text-left md:text-right">
-                Set Up Your Fashion With The Latest Trends
-              </h3>
-              <span className="mt-4 text-2xl text-brand-green">→</span>
             </motion.div>
           </div>
         </div>
@@ -502,3 +505,8 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
+
+
+

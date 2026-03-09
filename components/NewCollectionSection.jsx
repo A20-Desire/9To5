@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import LightboxImage from './LightboxImage';
 
 const luxeEase = [0.25, 0.46, 0.45, 0.94];
 
@@ -47,30 +47,30 @@ const cardVariants = {
 const products = [
   {
     id: 1,
-    name: "AURORA SILVER",
-    subtitle: "Reflective Puffer Jacket",
-    price: "$899.99",
-    colors: ["#FFFFFF", "#3B82F6"],
-    colorNames: ["WHITE", "BLUE"],
-    image: "/images/hero-image.jpg",
+    name: "URBAN COMMAND",
+    subtitle: "Structured Street-Formal Set",
+    price: "Starting at ₦220,000",
+    colors: ["#111111", "#FFFFFF"],
+    colorNames: ["ONYX", "IVORY"],
+    image: "/assets/fashion men/download (12).jpg",
   },
   {
     id: 2,
-    name: "ORBIT SILVER",
-    subtitle: "High-Gloss Puffer",
-    price: "$1,299.99",
-    colors: ["#C0C0C0"],
-    colorNames: ["SILVER"],
-    image: "/images/interior.jpg",
+    name: "SIGNATURE EDGE",
+    subtitle: "Modern Tailoring Capsule",
+    price: "Starting at ₦180,000",
+    colors: ["#1F2937", "#9CA3AF"],
+    colorNames: ["GRAPHITE", "STONE"],
+    image: "/assets/fashion men/download (13).jpg",
   },
   {
     id: 3,
-    name: "STEALTH BLACK",
-    subtitle: "Heavy Shield Puffer",
-    price: "$1,199.99",
-    colors: ["#000000", "#FFFFFF"],
-    colorNames: ["BLACK", "WHITE"],
-    image: "/images/event.jpg",
+    name: "EVENING DISTINCTION",
+    subtitle: "Elevated Occasion Look",
+    price: "Starting at ₦260,000",
+    colors: ["#0B0B0B", "#6B7280"],
+    colorNames: ["MIDNIGHT", "SMOKE"],
+    image: "/assets/fashion men/download (14).jpg",
   },
 ];
 
@@ -116,15 +116,15 @@ const NewCollectionSection = () => {
             <div className="flex items-center gap-3 mb-2">
               <span className="text-xs font-mono text-gray-400 tracking-widest">[ NEW COLLECTION ]</span>
               <span className="text-xs font-mono text-gray-500">SERIES: 01</span>
-              <span className="text-xs font-mono text-gray-500">[ PUFFERS ]</span>
+              <span className="text-xs font-mono text-gray-500">[ MENSWEAR ]</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-zentry uppercase font-black text-white tracking-tight">
               NEW COLLECTION
             </h2>
             <div className="flex gap-4 mt-3 text-xs font-mono text-gray-400">
-              <span>PUFFER JACKETS</span>
-              <span>MULTI LAYERS</span>
-              <span>GLOSS SERIES</span>
+              <span>TAILORED SETS</span>
+              <span>STATEMENT LAYERS</span>
+              <span>OCCASION READY</span>
             </div>
           </div>
           
@@ -155,15 +155,15 @@ const NewCollectionSection = () => {
               style={{ clipPath: chamferedClipPath }}
             >
               {/* Background Image */}
-              <Image
-                src="/images/hero-image.jpg"
-                alt="Aurora Collection"
+              <LightboxImage
+                src="/assets/fashion men/download (16).jpg"
+                alt="New menswear collection"
                 fill
                 className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
               />
               
               {/* Graffiti Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
               
               {/* Graffiti Art - SVG Decoration */}
               <div className="absolute bottom-20 left-4 opacity-40">
@@ -187,13 +187,13 @@ const NewCollectionSection = () => {
                 {/* Bottom Content */}
                 <div>
                   <h3 className="text-5xl md:text-6xl font-zentry uppercase font-black text-white mb-4 tracking-tight">
-                    AURORA™
+                    NEW COLLECTION
                   </h3>
                   <p className="text-gray-300 text-sm font-mono mb-6 max-w-xs">
-                    Premium reflective puffer jacket with advanced thermal insulation technology.
+                    Contemporary menswear capsules built for sharp lines, confident movement, and bold presence.
                   </p>
                   
-                  {/* Add to Cart Button */}
+                  {/* REQUEST LOOKBOOK Button */}
                   <motion.button
                     className="flex items-center gap-4 group/btn"
                     whileHover={{ x: 10 }}
@@ -209,8 +209,8 @@ const NewCollectionSection = () => {
                       </svg>
                     </div>
                     <div className="text-left">
-                      <p className="text-white text-sm font-mono">ADD TO CART</p>
-                      <p className="text-white text-xl font-zentry font-bold">$1,999</p>
+                      <p className="text-white text-sm font-mono">REQUEST LOOKBOOK</p>
+                      <p className="text-white text-xl font-zentry font-bold">SPRING EDIT</p>
                     </div>
                   </motion.button>
                 </div>
@@ -237,7 +237,7 @@ const NewCollectionSection = () => {
                   style={{ clipPath: chamferedClipPath }}
                 >
                   {/* Product Image */}
-                  <Image
+                  <LightboxImage
                     src={product.image}
                     alt={product.name}
                     fill
@@ -245,10 +245,10 @@ const NewCollectionSection = () => {
                   />
                   
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-brand-green/0 group-hover:bg-brand-green/10 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-brand-green/0 group-hover:bg-brand-green/10 transition-colors duration-300 pointer-events-none" />
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -275,10 +275,7 @@ const NewCollectionSection = () => {
                       ))}
                     </div>
 
-                    {/* Price */}
-                    <p className="text-white text-lg font-zentry font-bold">
-                      {product.price}
-                    </p>
+                    {/* Price removed as requested */}
                   </div>
 
                   {/* Top Corner Badge */}
@@ -301,8 +298,8 @@ const NewCollectionSection = () => {
           variants={fadeInUp}
         >
           <div className="flex gap-6">
-            <span>[ EXTREME COLD LINE ]</span>
-            <span>THERMAL RATING: -40°C</span>
+            <span>[ MODERN TAILORING ]</span>
+            <span>SEASON: 2026 EDIT</span>
           </div>
           <div className="flex gap-4">
             <span>01 / 07</span>
@@ -319,3 +316,5 @@ const NewCollectionSection = () => {
 };
 
 export default NewCollectionSection;
+
+
