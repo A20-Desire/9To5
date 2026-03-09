@@ -275,7 +275,7 @@ export default function LandingPage() {
                {/* Integrity and Attention Office Image */}
                <div className="relative w-full h-full">
                  <LightboxImage
-                   src="/assets/main-image/9To5-office.png"
+                   src="/assets/main-image/download (16).jpg"
                    alt="9To5 Consultancy Office"
                    fill
                    className="object-cover rounded-lg"
