@@ -4,6 +4,9 @@ import AppProviders from '../components/AppProviders';
 export const metadata = {
   title: '9TO5 Consultancy',
   description: 'Curating Your Life: Style, Space, & Celebration',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
